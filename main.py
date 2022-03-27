@@ -107,7 +107,8 @@ def handle_dialog(req, res):
         # Пользователь согласился, прощаемся.
         res['response']['text'] = f'{count.capitalize()} можно найти на Яндекс.Маркете!'
         res['response']['end_session'] = True
-        count = "кролика"
+        if res['response']['end_session']:
+            count = "кролика"
         return count
 
     # Если нет, то убеждаем его купить слона!
